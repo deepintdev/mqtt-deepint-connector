@@ -1,0 +1,11 @@
+[Unit] 
+Description=MQTT Deep Intelligence connector
+After=multiuser.target
+StartLimitIntervalSec=0 
+ 
+[Service] 
+Type=simple
+ExecStart=mqtt-deepint-connector <MQTT_BROKER> <MQTT_PORT> <MQTT_USER> <MQTT_PASSWORD> <MQTT_TOPICS> <DEEPINT_AUTH_TOKEN> <DEEPINT_ORGANIZATION_ID> <DEEPINT_WORKSPACE_ID> <DEEPINT_SOURCE_ID> <MQTT_CLIENT_ID> <MQTT_NUM_MESSAGE_LIMIT> <QUIET_MODE_SET> 
+ 
+[Install] 
+WantedBy=multi-user.target

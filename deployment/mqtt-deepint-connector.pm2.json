@@ -1,0 +1,12 @@
+{
+  "apps" : [
+    {
+      "name": "mqtt-deepint-connector",
+      "interpreter": "/bin/bash",
+      "script": "mqtt-deepint-connector",
+      "args": "<MQTT_BROKER> <MQTT_PORT> <MQTT_USER> <MQTT_PASSWORD> <MQTT_TOPICS> <DEEPINT_AUTH_TOKEN> <DEEPINT_ORGANIZATION_ID> <DEEPINT_WORKSPACE_ID> <DEEPINT_SOURCE_ID> <MQTT_CLIENT_ID> <MQTT_NUM_MESSAGE_LIMIT> <QUIET_MODE_SET>",
+      "out_file": "/var/log/mqtt-deepint-connector.log",
+      "error_file": "/var/log/mqtt-deepint-connector.log"
+    }
+  ]
+}
