@@ -1,6 +1,6 @@
 # MQTT to Deep Intelligence connector
 
-Connector to read data from MQTT and dump it into (Deep Intelligence)[https://deepint.net/]
+Connector to read data from MQTT and dump it into [Deep Intelligence](https://deepint.net/)
 
 ## How to install tool
 
