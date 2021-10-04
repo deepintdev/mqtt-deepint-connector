@@ -65,7 +65,7 @@ class MQTTConsumer:
 
         # suscribe to channels
         for t in mqtt_topics:
-            self.client.subscribe(channel)
+            self.client.subscribe(t)
 
     @staticmethod
     def _on_message(client: Any, userdata: str, message: str) -> None:
