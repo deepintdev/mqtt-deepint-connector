@@ -105,7 +105,7 @@ WantedBy=multi-user.target
 1. install Node.js and npm with `sudo apt install nodejs npm -y`
 2. install PM2 with `sudo npm install -g pm2`
 3. configure systemd unit replacing the variables between `<` and `>`
-4. register the serbvice with `sudo pm2 start mqtt-deepint-connector.service`
+4. register the serbvice with `sudo pm2 start mqtt-deepint-connector.pm2.json`
 5. enable the service with `sudo pm2 startup`
 
 ```
