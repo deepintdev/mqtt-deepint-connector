@@ -56,5 +56,5 @@ class DeepintProducer:
             logger.info(f"publishing {len(df)} messages to source {self.source_id}")
             source.instances.update(data=df, replace=False)
         except Exception as e:
-            logger.info(f'Exception during Deep Intelligence source update {e}')
+            logger.warning(f'Exception during Deep Intelligence source update {e}')
 

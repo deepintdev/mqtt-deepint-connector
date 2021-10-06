@@ -42,17 +42,17 @@ def run(
         or deepint_workspace_id is None \
         or deepint_source_id is None:
         
-        print(f'ERROR: Any of mqtt_broker({mqtt_broker}), mqtt_user({mqtt_user}), mqtt_password({mqtt_password}), mqtt_topics({mqtt_topics}), deepint_auth_token({deepint_auth_token}), deepint_organization_id({deepint_organization_id}), deepint_workspace_id({deepint_workspace_id}) or deepint_source_id({deepint_source_id}) not provided.')
+        logger.warning(f'ERROR: Any of mqtt_broker({mqtt_broker}), mqtt_user({mqtt_user}), mqtt_password({mqtt_password}), mqtt_topics({mqtt_topics}), deepint_auth_token({deepint_auth_token}), deepint_organization_id({deepint_organization_id}), deepint_workspace_id({deepint_workspace_id}) or deepint_source_id({deepint_source_id}) not provided.')
         return
 
     try:
         mqtt_topics = mqtt_topics.split(',')
     except:
-        print(f'ERROR: the providen list of topics is empty or has no the correct format: {mqtt_topics}')
+        logger.warning(f'ERROR: the providen list of topics is empty or has no the correct format: {mqtt_topics}')
         return
 
     if not mqtt_topics:
-        print(f'ERROR: the providen list of topics is empty or has no the correct format: {mqtt_topics}')
+        logger.warning(f'ERROR: the providen list of topics is empty or has no the correct format: {mqtt_topics}')
         return
 
     # disable logging if necceary
