@@ -28,9 +28,10 @@ class DeepintProducer:
     """
 
     def __init__(self, auth_token: str, organization_id: str, workspace_id: str, source_id: str) -> None:
-        logger.info('Authenticating against deepint.net')
-        credentials = deepint.Credentials.build(token=auth_token)
-        self.conn = deepint.Source.build(credentials=credentials, organization_id=organization_id, workspace_id=workspace_id, source_id=source_id)
+        self.source_id = source_id
+        self.workspace_id = workspace_id
+        self.organization_id = organization_id
+        self.credentials = deepint.Credentials.build(token=auth_token)
 
     def produce(self, data: List[Dict[str, Any]]) -> None:
         """Produces the given data to Deep Intelligence
@@ -38,7 +39,22 @@ class DeepintProducer:
         Args:
             data: JSON formatted data to dump into Deep Intelligence.
         """
+        try:
 
-        # create dataframe and send it to deep intelligence
-        df = pd.DataFrame(data=json_data)
-        self.conn.instances.update(data=df)
+            # build dataframe with data
+            df = pd.DataFrame(data=data)
+
+            # build source
+            source = deepint.Source.build(
+                        credentials=self.credentials
+                        ,organization_id=self.organization_id
+                        ,workspace_id=self.workspace_id
+                        ,source_id=self.source_id
+                    )
+
+            # create dataframe and send it to deep intelligence
+            logger.info(f"publishing message {data}")
+            source.instances.update(data=df, replace=False)
+        except Exception as e:
+            logger.warning(e)
+

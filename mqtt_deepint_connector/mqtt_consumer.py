@@ -74,8 +74,6 @@ class MQTTConsumer:
 
         global message_queue, message_limit
 
-        logger.info('new message')
-
         # extract data from message
         topic = message.topic
         content = json.loads(message.payload.decode("utf-8"))
@@ -87,7 +85,6 @@ class MQTTConsumer:
         if len(message_queue) >= message_limit:
             producer.produce(data=message_queue)
             message_queue.clear()
-            logger.info(f'dumped messages to deepint')
 
     def loop(self) -> None:
         """ Starts the MQTT consumer and produces messages to deepint for undefined time.
@@ -96,7 +93,7 @@ class MQTTConsumer:
         self.client.loop_start()
         self.client.loop()
         
-        logger.info('started consumer')
+        logger.info('Started consumer')
 
         # wait into the loop
         while True:
