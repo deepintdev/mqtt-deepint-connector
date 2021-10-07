@@ -10,6 +10,9 @@ from typing import Dict, List, Any
 from mqtt_deepint_connector import DeepintProducer, MQTTConsumer, serve_application_logger
 
 
+logger = serve_application_logger()
+
+
 def connect(
         mqtt_broker: str
         , mqtt_port: int
