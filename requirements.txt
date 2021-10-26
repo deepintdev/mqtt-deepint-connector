@@ -1,4 +1,4 @@
 paho-mqtt==1.4.0
-deepint>=1.3.3
+deepint>=1.3.5
 pandas>=1.1.4
 typer>=0.3.2
