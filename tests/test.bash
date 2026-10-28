@@ -4,15 +4,16 @@
 # See LICENSE for details.
 
 
-MQTT_BROKER="212.128.140.31"
-MQTT_PORT="2780"
-MQTT_USER="bisite"
-MQTT_PASSWORD="bisite00"
-MQTT_TOPICS="/CO2_project/123456/#"
-DEEPINT_AUTH_TOKEN="qRWYwzRE6iBfn8Ta7hrlgk7Q84c6gotP5xdESnI5U8kehz_A6lbgkFMlhCEgMVxvBeEhE22rnhPFe_NmX9cho4"
-DEEPINT_ORGANIZATION_ID="0000017c59e60604-ee44f722-866e9b8a-866f5737"
-DEEPINT_WORKSPACE_ID="0000017c7e5e63ba-3ec0f9e6-9d23f3dc-b4cc27b8"
-DEEPINT_SOURCE_ID="0000017cc190b235-94ca39c6-646face8-d97a7c28"
+# Connection data comes from the environment: never commit real hosts, users, passwords or tokens.
+MQTT_BROKER="${MQTT_BROKER:?set MQTT_BROKER in the environment}"
+MQTT_PORT="${MQTT_PORT:?set MQTT_PORT in the environment}"
+MQTT_USER="${MQTT_USER:?set MQTT_USER in the environment}"
+MQTT_PASSWORD="${MQTT_PASSWORD:?set MQTT_PASSWORD in the environment}"
+MQTT_TOPICS="${MQTT_TOPICS:?set MQTT_TOPICS in the environment}"
+DEEPINT_AUTH_TOKEN="${DEEPINT_AUTH_TOKEN:?set DEEPINT_AUTH_TOKEN in the environment}"
+DEEPINT_ORGANIZATION_ID="${DEEPINT_ORGANIZATION_ID:?set DEEPINT_ORGANIZATION_ID in the environment}"
+DEEPINT_WORKSPACE_ID="${DEEPINT_WORKSPACE_ID:?set DEEPINT_WORKSPACE_ID in the environment}"
+DEEPINT_SOURCE_ID="${DEEPINT_SOURCE_ID:?set DEEPINT_SOURCE_ID in the environment}"
 MQTT_CLIENT_ID="example-id"
 MQTT_NUM_MESSAGE_LIMIT="1"
 QUIET_MODE_SET="False"
