@@ -15,16 +15,16 @@ logger = serve_application_logger()
 
 
 class DeepintProducer:
-    """Produces to Deep Intelligence the given data, updating a source.
+    """Produces to AIR-Core the given data, updating a source.
 
     Attributes:
-        conn: connection to a deepint.net source.
+        conn: connection to an AIR-Core source.
 
     Args:
-        auth_token: Authentication token for Deep Intelligence.
-        organization_id: Deep intelligence organization's id, where source is located.
-        workspace_id: Deep intelligence workspace's id, where source is located.
-        source_id: Deep intelligence source's id, where data will be dumped.
+        auth_token: Authentication token for AIR-Core.
+        organization_id: AIR-Core organization's id, where source is located.
+        workspace_id: AIR-Core workspace's id, where source is located.
+        source_id: AIR-Core source's id, where data will be dumped.
     """
 
     def __init__(self, auth_token: str, organization_id: str, workspace_id: str, source_id: str) -> None:
@@ -34,10 +34,10 @@ class DeepintProducer:
         self.credentials = deepint.Credentials.build(token=auth_token)
 
     def produce(self, data: List[Dict[str, Any]]) -> None:
-        """Produces the given data to Deep Intelligence
+        """Produces the given data to AIR-Core
         
         Args:
-            data: JSON formatted data to dump into Deep Intelligence.
+            data: JSON formatted data to dump into AIR-Core.
         """
         try:
 
@@ -52,11 +52,11 @@ class DeepintProducer:
                         ,source_id=self.source_id
                     )
 
-            # create dataframe and send it to deep intelligence
+            # create dataframe and send it to AIR-Core
             logger.info(f"publishing {len(df)} messages to source {self.source_id}")
             t = source.instances.update(data=df, replace=False)
             t.resolve()
             
         except Exception as e:
-            logger.warning(f'Exception during Deep Intelligence source update {e}')
+            logger.warning(f'Exception during AIR-Core source update {e}')
 

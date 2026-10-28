@@ -29,17 +29,17 @@ def connect(
     """Util function to wrap the usage fo producer and consumer
 
     Args:
-        deepint_auth_token: Authentication token for Deep Intelligence.
-        deepint_organization_id: Deep intelligence organization's id, where source is located.
-        deepint_workspace_id: Deep intelligence workspace's id, where source is located.
-        deepint_source_id: Deep intelligence source's id, where data will be dumped.
+        deepint_auth_token: Authentication token for AIR-Core.
+        deepint_organization_id: AIR-Core organization's id, where source is located.
+        deepint_workspace_id: AIR-Core workspace's id, where source is located.
+        deepint_source_id: AIR-Core source's id, where data will be dumped.
         mqtt_broker: MQTT's broker IP.
         mqtt_port: MQTT's broker port.
         mqtt_user: MQTT's broker user.
         mqtt_password: MQTT's broker password.
         mqtt_topics: topics from data comes from.
         mqtt_client_id: MQTT's client id. If not provided, an UUIDv4 will be generated.
-        mqtt_num_message_limit: number of messages to store before dumpt to Deep Intelligence. If set to 0 each message is send.
+        mqtt_num_message_limit: number of messages to store before dumpt to AIR-Core. If set to 0 each message is send.
     """
 
     producer = DeepintProducer(auth_token=deepint_auth_token

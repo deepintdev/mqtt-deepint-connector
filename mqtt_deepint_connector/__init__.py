@@ -4,7 +4,7 @@
 # See LICENSE for details.
 
 __author__ = 'Deep Intelligence'
-__version__ = '1.0'
+__version__ = '1.1'
 
 
 from .log import serve_application_logger

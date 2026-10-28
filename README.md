@@ -1,6 +1,8 @@
-# MQTT to Deep Intelligence connector
+# MQTT to AIR-Core connector
 
-Connector to read data from MQTT and dump it into [Deep Intelligence](https://deepint.net/)
+Connector to read data from MQTT and dump it into [AIR-Core](https://app.air-core.io) (formerly Deep Intelligence).
+
+The connector talks to AIR-Core through the `deepint` Python SDK, so the API host is the one configured by that SDK.
 
 ## How to install tool
 
@@ -32,7 +34,7 @@ Usage: mqtt-deepint-connector [OPTIONS] [MQTT_BROKER] [MQTT_PORT] [MQTT_USER]
                               [MQTT_CLIENT_ID] [MQTT_NUM_MESSAGE_LIMIT]
                               [QUIET_MODE_SET]
 
-  While running dumps messages received from MQTT into deepint.
+  While running dumps messages received from MQTT into AIR-Core.
 
 Arguments:
   [MQTT_BROKER]              MQTT's broker IP
@@ -40,21 +42,21 @@ Arguments:
   [MQTT_USER]                MQTT's broker user
   [MQTT_PASSWORD]            MQTT's broker password
   [MQTT_TOPICS]              topics from data comes from
-  [DEEPINT_AUTH_TOKEN]       Authentication token for Deep Intelligence
-  [DEEPINT_ORGANIZATION_ID]  Deep intelligence organization's id, where source
+  [DEEPINT_AUTH_TOKEN]       Authentication token for AIR-Core
+  [DEEPINT_ORGANIZATION_ID]  AIR-Core organization's id, where source
                              is located
 
-  [DEEPINT_WORKSPACE_ID]     Deep intelligence workspace's id, where source is
+  [DEEPINT_WORKSPACE_ID]     AIR-Core workspace's id, where source is
                              located
 
-  [DEEPINT_SOURCE_ID]        Deep intelligence source's id, where data will be
+  [DEEPINT_SOURCE_ID]        AIR-Core source's id, where data will be
                              dumped
 
   [MQTT_CLIENT_ID]           MQTT's client id. If not provided, an UUIDv4 will
                              be generated
 
-  [MQTT_NUM_MESSAGE_LIMIT]   number of messages to store before dumpt to Deep
-                             Intelligence. If set to 0 each message is send
+  [MQTT_NUM_MESSAGE_LIMIT]   number of messages to store before dumpt to
+                             AIR-Core. If set to 0 each message is send
                              [default: 10]
 
   [QUIET_MODE_SET]            if set to true no logging information is
@@ -88,7 +90,7 @@ For deploying the application in the `deploy` folder, two deployment medium are 
 
 ```
 [Unit] 
-Description=MQTT Deep Intelligence connector
+Description=MQTT AIR-Core connector
 After=multiuser.target
 StartLimitIntervalSec=0 
  
