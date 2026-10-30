@@ -1,5 +1,5 @@
 [Unit] 
-Description=MQTT Deep Intelligence connector
+Description=MQTT AIR-Core connector
 After=multiuser.target
 StartLimitIntervalSec=0 
  

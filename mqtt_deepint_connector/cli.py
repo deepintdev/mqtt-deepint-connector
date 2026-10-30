@@ -20,14 +20,14 @@ def run(
     , mqtt_user: str = typer.Argument(default=None, help="MQTT's broker user")
     , mqtt_password: str = typer.Argument(default=None, help="MQTT's broker password")
     , mqtt_topics: str = typer.Argument(default=None, help="topics from data comes from")
-    , deepint_auth_token: str = typer.Argument(default=None, help="Authentication token for Deep Intelligence")
-    , deepint_organization_id: str = typer.Argument(default=None, help="Deep intelligence organization's id, where source is located")
-    , deepint_workspace_id: str = typer.Argument(default=None, help="Deep intelligence workspace's id, where source is located")
-    , deepint_source_id: str = typer.Argument(default=None, help="Deep intelligence source's id, where data will be dumped")
+    , deepint_auth_token: str = typer.Argument(default=None, help="Authentication token for AIR-Core")
+    , deepint_organization_id: str = typer.Argument(default=None, help="AIR-Core organization's id, where source is located")
+    , deepint_workspace_id: str = typer.Argument(default=None, help="AIR-Core workspace's id, where source is located")
+    , deepint_source_id: str = typer.Argument(default=None, help="AIR-Core source's id, where data will be dumped")
     , mqtt_client_id: str = typer.Argument(default=None, help="MQTT's client id. If not provided, an UUIDv4 will be generated")
-    , mqtt_num_message_limit: int = typer.Argument(default=10, help="number of messages to store before dumpt to Deep Intelligence. If set to 0 each message is send")
+    , mqtt_num_message_limit: int = typer.Argument(default=10, help="number of messages to store before dumpt to AIR-Core. If set to 0 each message is send")
     , quiet_mode_set: bool = typer.Argument(default=False, help=" if set to true no logging information is provided.")) -> None:
-    """While running dumps messages received from MQTT into deepint.
+    """While running dumps messages received from MQTT into AIR-Core.
     """
 
     # check arguments

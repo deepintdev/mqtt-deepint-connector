@@ -21,7 +21,7 @@ def read_requeriments_file(filename):
 
 setup(
     name='mqtt-deepint-connector',
-    version='1.0',
+    version='1.1',
     packages=find_packages(),
     url='https://github.com/air-institute/mqtt-deepint-connector',
     download_url='https://github.com/air-institute/mqtt-deepint-connector/archive/master.zip',
@@ -48,7 +48,7 @@ setup(
         "License :: OSI Approved :: GNU Affero General Public License v3",
         "Intended Audience :: Developers"
     ],
-    keywords='MQTT, Deep Intelligence, connector',
+    keywords='MQTT, AIR-Core, Deep Intelligence, connector',
     python_requires='>=3',
     project_urls={
         'Bug Reports': 'https://github.com/air-institute/mqtt-deepint-connector/issues',

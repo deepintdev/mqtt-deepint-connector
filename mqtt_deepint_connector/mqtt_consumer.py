@@ -28,14 +28,14 @@ class MQTTConsumer:
         client: connection to MQTT broker.
 
     Args:
-        deepint_producer: producer to send data to deepint on message received.
+        deepint_producer: producer to send data to AIR-Core on message received.
         mqtt_broker: MQTT's broker IP.
         mqtt_port: MQTT's broker port.
         mqtt_user: MQTT's broker user.
         mqtt_password: MQTT's broker password.
         mqtt_topics: topics from data comes from.
         mqtt_client_id: MQTT's client id. If not provided, an UUIDv4 will be generated.
-        num_message_limit: number of messages to store before dumpt to Deep Intelligence. If set to 0 each message is send.
+        num_message_limit: number of messages to store before dumpt to AIR-Core. If set to 0 each message is send.
     """
 
     def __init__(self
@@ -69,7 +69,7 @@ class MQTTConsumer:
 
     @staticmethod
     def _on_message(client: Any, userdata: str, message: str) -> None:
-        """"Consumes messages and dumps it into deepint when real time is set to true.
+        """"Consumes messages and dumps it into AIR-Core when real time is set to true.
         """
 
         global message_queue, message_limit
@@ -81,13 +81,13 @@ class MQTTConsumer:
         # add message to queue
         message_queue.append(content)
 
-        # dump into deepint if neccesary
+        # dump into AIR-Core if neccesary
         if len(message_queue) >= message_limit:
             producer.produce(data=message_queue)
             message_queue.clear()
 
     def loop(self) -> None:
-        """ Starts the MQTT consumer and produces messages to deepint for undefined time.
+        """ Starts the MQTT consumer and produces messages to AIR-Core for undefined time.
         """
 
         self.client.loop_start()
