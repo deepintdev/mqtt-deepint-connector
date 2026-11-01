@@ -1,8 +1,8 @@
 # MQTT to AIR-Core connector
 
-Connector to read data from MQTT and dump it into [AIR-Core](https://app.air-core.io) (formerly Deep Intelligence).
+Connector to read data from MQTT and dump it into [AIR-Core](https://app.air-core.io), the data and AI platform maintained by [AIR Institute](https://air-institute.com).
 
-The connector talks to AIR-Core through the `deepint` Python SDK. With `deepint` 1.5 or later the default host is app.air-core.io; to use another instance (for example app.deepint.net or an on-premises one) set `AIRCORE_INSTANCE` (or the legacy `DEEPINT_INSTANCE`) in the environment of the connector. Older SDK versions always use app.deepint.net.
+The connector talks to AIR-Core through the `deepint` Python SDK. With `deepint` 1.5 or later the default host is app.air-core.io; to use another instance (for example an on-premises one) set `AIRCORE_INSTANCE` (legacy name `DEEPINT_INSTANCE` is still accepted) in the environment of the connector. Use `deepint` 1.5 or later.
 
 ## How to install tool
 
